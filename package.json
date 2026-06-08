@@ -1,0 +1,42 @@
+// filename: package.json
+{
+  "name": "pmatrix-backend",
+  "version": "1.0.0",
+  "description": "Production Cloud-to-Cloud Copy Trading Platform Backend",
+  "main": "dist/api-server/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start:api": "node dist/api-server/index.js",
+    "start:worker": "node dist/worker/index.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "dev:api": "ts-node-dev --respawn --transpile-only src/api-server/index.ts",
+    "dev:worker": "ts-node-dev --respawn --transpile-only src/worker/index.ts"
+  },
+  "dependencies": {
+    "@bull-mq/pro": "^2.0.0",
+    "bullmq": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.0",
+    "express": "^5.0.0-beta.3",
+    "express-rate-limit": "^7.1.5",
+    "jsonwebtoken": "^9.0.2",
+    "metaapi.cloud-sdk": "^25.1.0",
+    "pg": "^8.11.3",
+    "redis": "^4.6.13",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.11.24",
+    "@types/pg": "^8.11.2",
+    "drizzle-kit": "^0.20.14",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.0"
+  }
+}
